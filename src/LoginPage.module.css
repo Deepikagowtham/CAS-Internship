@@ -1,0 +1,10 @@
+.container {
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(135deg, #f8a5c2, #6a89cc, #fad390);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  

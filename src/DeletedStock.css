@@ -1,0 +1,134 @@
+/* Container Styling */
+.deleted-stock-container {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  /* Header Styling */
+  h2 {
+    text-align: center;
+    color: #3498db;
+    font-size: 26px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    animation: slideIn 0.7s ease-in-out;
+  }
+  
+  /* Table Styling */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    overflow: hidden;
+    border-radius: 8px;
+  }
+  
+  th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 2px solid #ddd;
+  }
+  
+  th {
+    background: #3498db;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  td {
+    font-size: 15px;
+    color: #333;
+  }
+  
+  /* Row Hover Effect */
+  tr:hover {
+    background: #f9e0df;
+    transition: background 0.3s ease-in-out;
+  }
+  
+  /* No Records Message */
+  .no-records {
+    text-align: center;
+    padding: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #888;
+    animation: fadeIn 0.7s ease-in-out;
+  }
+  
+  /* Reason Input Styling */
+  .reason-input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    transition: border-color 0.3s;
+  }
+  
+  .reason-input:focus {
+    border-color: #e74c3c;
+    outline: none;
+    box-shadow: 0px 0px 5px rgba(231, 76, 60, 0.5);
+  }
+  
+  /* Button Container */
+  .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+  }
+  
+  /* Clear Button */
+  .clear-btn {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: transform 0.2s, background-color 0.3s;
+  }
+  
+  .clear-btn:hover {
+    background-color: #c0392b;
+    transform: scale(1.05);
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateX(-50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  

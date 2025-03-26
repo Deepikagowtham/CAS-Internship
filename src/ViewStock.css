@@ -1,0 +1,96 @@
+.view-stock-container {
+  max-width: 90%;
+  margin: 40px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+h2 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+}
+
+th, td {
+  padding: 12px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+th {
+  background: #3498db;
+  color: white;
+}
+
+td {
+  font-size: 16px;
+}
+
+tr:nth-child(even) {
+  background: #f8f9fa;
+}
+
+input[type="number"],
+input[type="date"] {
+  width: 90%;
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.button-container {
+  margin-top: 20px;
+}
+
+button {
+  margin: 10px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.update-btn {
+  background: #28a745;
+  color: white;
+}
+
+.delete-btn {
+  background: #dc3545;
+  color: white;
+}
+
+.confirm-delete-btn {
+  background: #ff4d4d;
+  color: white;
+}
+
+.save-btn {
+  background: #007bff;
+  color: white;
+}
+
+.cancel-btn {
+  background: #6c757d;
+  color: white;
+}
+
+/* Style the checkbox to be smaller and properly aligned */
+input[type="checkbox"] {
+  width: 16px;  /* Set a smaller width */
+  height: 16px; /* Set a smaller height */
+  cursor: pointer;
+  margin: 0;  /* Remove any extra margin */
+  transform: scale(1); /* Ensure it remains the correct size */
+  vertical-align: middle; /* Align checkbox with text */
+}

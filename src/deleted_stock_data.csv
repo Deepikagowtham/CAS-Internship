@@ -1,0 +1,21 @@
+medicineName,batchNumber,deletedAt,reason
+Insulin,BN2893,2024-01-10,Expired
+Eye Drops,BN7129,2024-03-16,Other: Recalled by supplier
+Antibiotic Ointment,BN5854,2024-01-13,Expired
+Cough Syrup,BN9685,2024-03-19,Other: Recalled by supplier
+Amoxicillin,BN4409,2024-02-16,Other: Storage issue
+Cough Syrup,BN2335,2024-03-15,Other: Customer return
+Vitamin C,BN3671,2024-02-03,Expired
+Multivitamin,BN9795,2024-02-02,Unmovable
+Cough Syrup,BN4337,2024-03-04,Damaged
+Insulin,BN6309,2024-03-05,Expired
+Cough Syrup,BN1568,2024-01-12,Unmovable
+Multivitamin,BN4081,2024-03-08,Damaged
+Antibiotic Ointment,BN6513,2024-01-07,Other: Customer return
+Amoxicillin,BN9735,2024-03-11,Other: Customer return
+Multivitamin,BN2087,2024-03-06,Damaged
+Antibiotic Ointment,BN8128,2024-02-27,Unmovable
+Cough Lozenges,BN3615,2024-02-11,Damaged
+Pain Relief Gel,BN9253,2024-03-05,Expired
+Cough Lozenges,BN3404,2024-03-10,Damaged
+Cough Lozenges,BN8455,2024-01-01,Damaged

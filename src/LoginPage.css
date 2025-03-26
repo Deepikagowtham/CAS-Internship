@@ -1,0 +1,185 @@
+/* General Styles */
+body {
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(135deg, #43b0f1, #057dcd);
+    /*background: #ffffff;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    margin: 0;
+  }
+  
+  /* Login Container */
+  .login-container {
+    width: 950px;
+    max-height: 700px;
+    color: #ffffff;
+    display: flex;
+    margin-top: 50px;
+    justify-content: center;
+    margin-bottom: 40px;
+  }
+  
+  /* Glassmorphism Effect */
+  .login-box {
+    width: 900px;
+    display: flex;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  
+  /* Left Section */
+  .left-section {
+    width: 50%;
+    padding: 30px;
+  }
+  
+  .left-section h2 {
+    font-size: 28px;
+    margin-top: -7px;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .left-section p {
+    color: #555;
+    margin-bottom: 20px;
+  }
+  
+  .input-group {
+    margin-bottom: 15px;
+    text-align: left;
+  }
+  
+  .input-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .input-group input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    background: rgba(255, 254, 254, 0.863);
+    outline: none;
+  }
+  
+  /* Options */
+  .options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+  
+  .options a {
+    color: #555;
+    text-decoration: none;
+  }
+  
+  .options a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Buttons */
+  .login-btn {
+    background: #ffffff;
+    color: #3498db;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .login-btn:hover {
+    background: #3498db;
+    color:#ffffff;
+    border-color: #ffffff;
+  }
+  
+  .alt-btn {
+    background: transparent;
+    background: #ffffff;
+    color: #3498db;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .alt-btn:hover {
+    background: #3498db;
+    color:#ffffff;
+    border-color: #ffffff;
+  }
+  
+  /* Terms Text */
+  .terms-text {
+    font-size: 12px;
+    color: #777;
+    margin-top: 15px;
+  }
+  
+  /* Right Section */
+  .right-section {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+  }
+  
+  .right-section img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 20px; /* Curved border */
+    height: 500px;
+  }
+  
+  /* 🚀 Form Slide-in From Top */
+@keyframes slideInTop {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.slide-in-top {
+  animation: slideInTop 1s ease-in-out;
+}
+
+/* 🚀 Image Slide-in From Right */
+@keyframes slideInRight {
+  from {
+    transform: translateX(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.slide-in-right {
+  animation: slideInRight 1s ease-in-out;
+}

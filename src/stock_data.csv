@@ -1,0 +1,51 @@
+medicineName,batchNumber,manufacturingDate,expiryDate,quantity,supplierDetails,purchaseCost,storageConditions
+Cough Lozenges,BN5469,2023-08-02,2026-02-25,411,PharmaLife,203.72,Room Temperature
+Amoxicillin,BN4674,2023-07-25,2025-04-16,291,WellnessMed,368.83,Room Temperature
+Ibuprofen,BN5257,2023-11-25,2023-12-13,464,WellnessMed,145.17,Refrigerated
+Eye Drops,BN7960,2023-11-01,2025-10-09,273,BioCare Supplies,154.6,Refrigerated
+Vitamin C,BN1197,2023-09-18,2024-11-18,184,HealthPlus,97.86,Room Temperature
+Ibuprofen,BN8131,2023-12-15,2025-07-03,40,HealthPlus,147.77,Room Temperature
+Cough Lozenges,BN2303,2023-12-14,2024-03-28,227,HealthPlus,108.61,Refrigerated
+Paracetamol,BN1157,2023-06-25,2024-06-06,150,WellnessMed,131.02,Room Temperature
+Eye Drops,BN2681,2023-11-27,2026-10-11,237,BioCare Supplies,403.03,Room Temperature
+Antibiotic Ointment,BN7028,2023-12-06,2025-09-01,409,WellnessMed,482.14,Cool & Dry Place
+Antibiotic Ointment,BN8806,2023-11-16,2025-11-30,240,HealthPlus,347.94,Room Temperature
+Insulin,BN2581,2023-12-06,2025-05-17,431,BioCare Supplies,36.67,Cool & Dry Place
+Amoxicillin,BN5006,2023-12-26,2024-08-13,478,BioCare Supplies,244.42,Room Temperature
+Ibuprofen,BN2573,2023-12-20,2025-12-20,197,HealthPlus,97.96,Cool & Dry Place
+Insulin,BN5309,2023-06-15,2024-05-06,164,MediCorp,379.21,Cool & Dry Place
+Insulin,BN8001,2023-09-06,2025-11-04,435,HealthPlus,171.4,Cool & Dry Place
+Amoxicillin,BN2694,2023-07-05,2025-12-09,232,MediCorp,331.51,Cool & Dry Place
+Paracetamol,BN3078,2023-09-18,2025-12-26,140,HealthPlus,141.44,Refrigerated
+Paracetamol,BN7270,2023-11-23,2024-08-18,229,MediCorp,199.25,Cool & Dry Place
+Pain Relief Gel,BN5526,2023-06-25,2026-05-11,311,MediCorp,163.89,Refrigerated
+Paracetamol,BN9671,2023-11-12,2024-01-27,268,BioCare Supplies,281.16,Refrigerated
+Vitamin C,BN7569,2023-06-07,2026-04-28,161,PharmaLife,218.79,Room Temperature
+Pain Relief Gel,BN8631,2023-06-29,2024-01-09,341,PharmaLife,334.87,Cool & Dry Place
+Pain Relief Gel,BN2389,2023-09-08,2025-01-29,244,MediCorp,435.45,Refrigerated
+Eye Drops,BN5815,2023-11-11,2025-04-18,240,WellnessMed,228.95,Cool & Dry Place
+Multivitamin,BN2146,2023-06-14,2026-11-29,453,HealthPlus,457.5,Cool & Dry Place
+Cough Syrup,BN9747,2023-07-26,2025-03-13,246,WellnessMed,113.19,Refrigerated
+Insulin,BN4722,2023-08-30,2024-06-21,352,HealthPlus,375.51,Cool & Dry Place
+Vitamin C,BN2921,2023-06-12,2026-08-25,243,WellnessMed,437.8,Cool & Dry Place
+Eye Drops,BN6252,2023-10-19,2025-07-13,169,HealthPlus,182.81,Refrigerated
+Eye Drops,BN8564,2023-08-18,2024-09-19,335,MediCorp,218.67,Refrigerated
+Antibiotic Ointment,BN9417,2023-10-02,2025-07-13,138,WellnessMed,301.81,Cool & Dry Place
+Antibiotic Ointment,BN2665,2023-08-18,2025-03-29,383,MediCorp,152.56,Cool & Dry Place
+Multivitamin,BN7828,2023-09-11,2026-12-06,18,PharmaLife,467.5,Cool & Dry Place
+Multivitamin,BN6146,2023-07-29,2026-04-12,190,HealthPlus,116.57,Refrigerated
+Cough Lozenges,BN8690,2023-09-08,2026-01-15,156,BioCare Supplies,110.64,Room Temperature
+Vitamin C,BN8844,2023-09-13,2026-10-08,62,PharmaLife,415.97,Refrigerated
+Vitamin C,BN7269,2023-11-01,2024-10-20,243,WellnessMed,175.6,Refrigerated
+Multivitamin,BN1185,2023-12-22,2024-05-30,346,MediCorp,421.93,Cool & Dry Place
+Cough Syrup,BN9083,2023-06-26,2026-03-13,173,BioCare Supplies,461.84,Cool & Dry Place
+Antibiotic Ointment,BN3763,2023-07-09,2026-11-29,176,WellnessMed,353.23,Cool & Dry Place
+Ibuprofen,BN4547,2023-12-18,2024-07-29,283,HealthPlus,165.26,Refrigerated
+Eye Drops,BN6140,2023-06-07,2026-01-28,476,BioCare Supplies,97.24,Room Temperature
+Vitamin C,BN8077,2023-07-27,2026-12-25,274,BioCare Supplies,176.94,Room Temperature
+Amoxicillin,BN6069,2023-07-25,2023-09-08,482,WellnessMed,163.57,Refrigerated
+Amoxicillin,BN2760,2023-11-01,2024-11-12,183,BioCare Supplies,152.16,Refrigerated
+Paracetamol,BN8501,2023-08-05,2025-11-01,465,MediCorp,245.31,Room Temperature
+Cough Syrup,BN5307,2023-11-22,2025-04-13,191,WellnessMed,140.12,Cool & Dry Place
+Amoxicillin,BN7936,2023-08-28,2024-01-14,347,PharmaLife,446.76,Room Temperature
+Pain Relief Gel,BN6187,2023-09-08,2024-09-24,350,MediCorp,80.45,Room Temperature

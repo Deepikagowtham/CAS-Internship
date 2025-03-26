@@ -1,0 +1,152 @@
+/* Background - Keeping it light and clean */
+body {
+  background: #f4f4f4;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Form Container with Semi-Transparent Effect */
+.add-stock-container {
+  max-width: 600px;
+  padding: 25px;
+  margin-left: -200px;
+  margin-top: -570px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  background: rgba(249, 249, 249, 0.7); /* Semi-transparent */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(8px); /* Light Glass Effect */
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+/* Title */
+.add-stock-container h2 {
+  text-align: center;
+  color: #1e3d58;
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  
+}
+
+/* Form Layout */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* Labels */
+label {
+  font-weight: bold;
+  color: #1e3d58;
+  font-size: 15px;
+}
+
+/* Input Fields */
+input, select {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  width: 500px;
+  font-size: 16px;
+  background: rgba(255, 255, 255, 0.9);
+  transition: 0.3s ease-in-out;
+  outline: none;
+}
+/* Input Hover & Focus Effects */
+input:focus, select:focus {
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0px 0px 5px rgba(67, 176, 241, 0.5);
+  border: 1px solid #43b0f1;
+}
+
+/* Buttons */
+button {
+  background-color: #43b0f1;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  margin-right: 30px;
+  text-transform: uppercase;
+  transition: 0.3s ease-in-out;
+}
+
+/* Button Hover Effect */
+button:hover {
+  background-color: #057dcd;
+  transform: scale(1.05);
+}
+
+/* Button Click Effect */
+button:active {
+  transform: scale(0.95);
+}
+
+/* Smooth Fade-in Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+.autocomplete {
+  position: relative;
+  width: 100%;
+}
+
+.autocomplete-list {
+  position: absolute;
+  background: white;
+  border: 1px solid #ccc;
+  width: 100%;
+  max-height: 150px;
+  overflow-y: auto;
+  border-radius: 5px;
+  z-index: 10;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.autocomplete-list li {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.autocomplete-list li:hover {
+  background: #f0f0f0;
+}
+/* Image Container */
+.image-container {
+  max-width: 500px;
+  height: auto;
+  display: flex;
+  justify-content: center; /* Centers the image horizontally */
+  align-items: center; /* Centers the image vertically */
+  margin-left: 500px;
+  margin-right: -200px;
+  margin-top:  100px;
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+  border-radius: 20px; /* Curved border */
+  object-fit: contain;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}

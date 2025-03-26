@@ -1,0 +1,51 @@
+/* Global Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #e8eef1;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Container */
+.container {
+  width: 90%;
+  max-width: 900px;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Header */
+h1 {
+  color: #1e3d58;
+  margin-bottom: 20px;
+}
+
+/* Navigation Bar */
+nav {
+  display: flex;
+  justify-content: space-around;
+  background-color: #1e3d58;
+  padding: 10px 0;
+  border-radius: 5px;
+}
+
+nav a {
+  text-decoration: none;
+  background-color: #43b0f1;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+nav a:hover {
+  background-color: #057dcd;
+}
