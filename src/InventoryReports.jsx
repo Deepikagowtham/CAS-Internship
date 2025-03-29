@@ -1,49 +1,50 @@
 import React, { useState, useEffect } from "react";
 import {
-    Container, Typography, Grid, Paper, TextField, Button,
-    Drawer, List, ListItem, ListItemText, Box
+    Container, Typography, Drawer, List, ListItem, ListItemText, Box, CircularProgress, Paper
 } from "@mui/material";
 import {
-    PieChart, Pie, BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer
+    BarChart, Bar, LineChart, Line, XAxis, YAxis, Tooltip, CartesianGrid, ResponsiveContainer
 } from "recharts";
+import { Fade } from "@mui/material"; // Smooth animation
+import ExpiryDataReport from "./ExpiryDataReport"; // Import the new component
+import StockDataReport from "./StockDataReport";
+import SupplierPerformanceReport from "./SupplierPerformanceReport";
+import SalesStockReport from "./SalesStockReport"; // New Sales vs Stock component
 
 const InventoryReport = () => {
     const [selectedCategory, setSelectedCategory] = useState("Stock Data");
+
+    // Data states
     const [stockData, setStockData] = useState([]);
     const [expiryData, setExpiryData] = useState([]);
     const [supplierPerformance, setSupplierPerformance] = useState([]);
     const [salesStockData, setSalesStockData] = useState([]);
     const [returnDamageData, setReturnDamageData] = useState([]);
 
-    const [medicineName, setMedicineName] = useState("");
-    const [dateRange, setDateRange] = useState({ start: "", end: "" });
+    const [loading, setLoading] = useState(true);
+
+    const baseUrl = "http://127.0.0.1:5000"; // Backend API URL
 
     // Fetch API Data
     useEffect(() => {
-        fetch("/api/stock-levels")
-            .then(res => res.json())
-            .then(data => setStockData(data))
-            .catch(error => console.error("Stock API Error:", error));
+        setLoading(true);
 
-        fetch("/api/expiry-status")
-            .then(res => res.json())
-            .then(data => setExpiryData(data))
-            .catch(error => console.error("Expiry API Error:", error));
-
-        fetch("/api/supplier-performance")
-            .then(res => res.json())
-            .then(data => setSupplierPerformance(data))
-            .catch(error => console.error("Supplier API Error:", error));
-
-        fetch("/api/sales-stock-analysis")
-            .then(res => res.json())
-            .then(data => setSalesStockData(data))
-            .catch(error => console.error("Sales API Error:", error));
-
-        fetch("/api/return-damage")
-            .then(res => res.json())
-            .then(data => setReturnDamageData(data))
-            .catch(error => console.error("Return API Error:", error));
+        Promise.all([
+            fetch(`${baseUrl}/api/stock-levels`).then(res => res.json()),
+            fetch(`${baseUrl}/api/expiry-status`).then(res => res.json()),
+            fetch(`${baseUrl}/api/supplier-performance`).then(res => res.json()),
+            fetch(`${baseUrl}/api/sales-stock-analysis`).then(res => res.json()),
+            fetch(`${baseUrl}/api/return-damage`).then(res => res.json()),
+        ])
+        .then(([stock, expiry, supplier, sales, returns]) => {
+            setStockData(stock);
+            setExpiryData(expiry);
+            setSupplierPerformance(supplier);
+            setSalesStockData(sales);
+            setReturnDamageData(returns);
+        })
+        .catch(error => console.error("API Fetch Error:", error))
+        .finally(() => setLoading(false));
     }, []);
 
     // Handle Sidebar Selection
@@ -51,15 +52,7 @@ const InventoryReport = () => {
         setSelectedCategory(category);
     };
 
-    // Filtering Function
-    const handleFilter = () => {
-        fetch(`/api/stock-levels?medicineName=${medicineName}&start=${dateRange.start}&end=${dateRange.end}`)
-            .then(res => res.json())
-            .then(data => setStockData(data))
-            .catch(error => console.error("Filter API Error:", error));
-    };
-
-    // Sidebar Options
+    // Sidebar Menu Options
     const menuItems = [
         "Stock Data",
         "Expiry Data",
@@ -69,7 +62,8 @@ const InventoryReport = () => {
     ];
 
     return (
-        <Box sx={{ display: "flex" }}>
+        
+        <Box sx={{ display: "flex", background: "#f8f9fa", height: "100vh" }}>
             {/* Sidebar */}
             <Drawer variant="permanent" sx={{ width: 240, flexShrink: 0 }}>
                 <Box sx={{ width: 240, padding: 2, background: "#007bff", color: "white", height: "100vh" }}>
@@ -79,14 +73,15 @@ const InventoryReport = () => {
                     <List>
                         {menuItems.map((text) => (
                             <ListItem
-                                button
+                                component="button"
                                 key={text}
                                 onClick={() => handleCategoryChange(text)}
                                 sx={{
                                     background: selectedCategory === text ? "#0056b3" : "transparent",
                                     color: "white",
                                     borderRadius: "5px",
-                                    margin: "5px 0"
+                                    margin: "5px 0",
+                                    transition: "background 0.3s ease-in-out"
                                 }}
                             >
                                 <ListItemText primary={text} />
@@ -97,98 +92,49 @@ const InventoryReport = () => {
             </Drawer>
 
             {/* Main Content */}
-            <Container sx={{ marginLeft: "260px", padding: "20px" }}>
+            <Container sx={{ marginLeft: "400px", padding: "20px", marginRight: "600px" }}>
                 <Typography variant="h4" gutterBottom>{selectedCategory}</Typography>
 
-                {/* Filters */}
-                <Paper sx={{ padding: 2, marginBottom: 2 }}>
-                    <Typography variant="h6">Filters</Typography>
-                    <Grid container spacing={2}>
-                        <Grid item xs={4}>
-                            <TextField
-                                label="Medicine Name"
-                                fullWidth
-                                value={medicineName}
-                                onChange={(e) => setMedicineName(e.target.value)}
-                            />
-                        </Grid>
-                        <Grid item xs={3}>
-                            <TextField
-                                label="Start Date"
-                                type="date"
-                                fullWidth
-                                InputLabelProps={{ shrink: true }}
-                                value={dateRange.start}
-                                onChange={(e) => setDateRange({ ...dateRange, start: e.target.value })}
-                            />
-                        </Grid>
-                        <Grid item xs={3}>
-                            <TextField
-                                label="End Date"
-                                type="date"
-                                fullWidth
-                                InputLabelProps={{ shrink: true }}
-                                value={dateRange.end}
-                                onChange={(e) => setDateRange({ ...dateRange, end: e.target.value })}
-                            />
-                        </Grid>
-                        <Grid item xs={2}>
-                            <Button variant="contained" color="primary" fullWidth onClick={handleFilter}>
-                                Apply Filter
-                            </Button>
-                        </Grid>
-                    </Grid>
-                </Paper>
+                {/* Reports */}
+                <Paper sx={{ padding: 2, background: "#fff", boxShadow: "0px 4px 8px rgba(0,0,0,0.1)" }}>
+                    {loading ? (
+                        <CircularProgress sx={{ display: "block", margin: "auto" }} />
+                    ) : (
+                        <Fade in={!loading}>
+                            <Box>
+                                {/* Stock Data - Bar Chart */}
+                                {selectedCategory === "Stock Data" && stockData.length > 0 && (
+                                    <StockDataReport stockData={stockData} />
+                                )}
 
-                {/* Reports Based on Selection */}
-                <Paper sx={{ padding: 2 }}>
-                    {selectedCategory === "Stock Data" && (
-                        <ResponsiveContainer width="100%" height={300}>
-                            <BarChart data={stockData}>
-                                <XAxis dataKey="medicine" />
-                                <YAxis />
-                                <Tooltip />
-                                <Bar dataKey="quantity" fill="#3f51b5" />
-                            </BarChart>
-                        </ResponsiveContainer>
-                    )}
+                                {/* Expiry Data - Line Chart */}
+                                {selectedCategory === "Expiry Data" && expiryData.length > 0 && (
+                                    <ExpiryDataReport expiryData={expiryData} />
+                                )}
 
-                    {selectedCategory === "Expiry Data" && (
-                        <ResponsiveContainer width="100%" height={300}>
-                            <PieChart>
-                                <Pie data={expiryData} dataKey="count" nameKey="status" fill="#f50057" label />
-                            </PieChart>
-                        </ResponsiveContainer>
-                    )}
+                                {/* Supplier Performance - Bar Chart */}
+                                {selectedCategory === "Supplier Performance" && supplierPerformance.length > 0 && (
+                                    <SupplierPerformanceReport supplierPerformance={supplierPerformance} />
+                                )}
 
-                    {selectedCategory === "Supplier Performance" && (
-                        <ResponsiveContainer width="100%" height={300}>
-                            <BarChart data={supplierPerformance}>
-                                <XAxis dataKey="supplier" />
-                                <YAxis />
-                                <Tooltip />
-                                <Bar dataKey="rating" fill="#009688" />
-                            </BarChart>
-                        </ResponsiveContainer>
-                    )}
+                                {/* Supplier Performance - Bar Chart */}
+                                {selectedCategory === "Sales vs Stock Analysis" && salesStockData.length > 0 && (
+                                    <SalesStockReport salesStockData={salesStockData} />
+                                )}
 
-                    {selectedCategory === "Sales vs Stock Analysis" && (
-                        <ResponsiveContainer width="100%" height={300}>
-                            <BarChart data={salesStockData}>
-                                <XAxis dataKey="medicine" />
-                                <YAxis />
-                                <Tooltip />
-                                <Bar dataKey="sales" fill="#ff9800" />
-                            </BarChart>
-                        </ResponsiveContainer>
-                    )}
-
-                    {selectedCategory === "Return & Damage Data" && (
-                        <ResponsiveContainer width="100%" height={300}>
-                            <PieChart>
-                                <Pie data={returnDamageData} dataKey="count" nameKey="type" fill="#4caf50" label />
-                            </PieChart>
-                        </ResponsiveContainer>
+                                {/* Return & Damage - Bar Chart */}
+                                {selectedCategory === "Return & Damage Data" && returnDamageData.length > 0 && (
+                                    <ResponsiveContainer width={600} height={400}>
+                                        <BarChart data={returnDamageData}>
+                                            <XAxis dataKey="reason" />
+                                            <YAxis />
+                                            <Tooltip />
+                                            <Bar dataKey="medicineName" fill="#d32f2f" />
+                                        </BarChart>
+                                    </ResponsiveContainer>
+                                )}
+                            </Box>
+                        </Fade>
                     )}
                 </Paper>
             </Container>

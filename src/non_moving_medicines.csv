@@ -1,0 +1,26 @@
+Medicine Name,Batch Number,Expiry Date,Quantity Sold,Stock Remaining,Date of Sale,Category
+Medicine_30,NMB9377,2025-09-15,0,92,,Vitamin
+Medicine_35,NMB9970,2025-01-01,0,80,,Vitamin
+Medicine_31,NMB3474,2025-02-27,0,35,,Antiseptic
+Medicine_38,NMB9031,2025-05-20,0,25,,Antacid
+Medicine_30,NMB5061,2025-11-22,0,33,,Antacid
+Medicine_40,NMB6740,2026-08-15,0,50,,Antiseptic
+Medicine_34,NMB5962,2025-03-26,0,38,,Painkiller
+Medicine_26,NMB7928,2025-08-11,0,38,,Cough Syrup
+Medicine_23,NMB5305,2025-10-25,0,80,,Antiseptic
+Medicine_29,NMB4811,2025-06-15,0,72,,Painkiller
+Medicine_31,NMB4451,2025-09-06,0,26,,Vitamin
+Medicine_23,NMB5257,2026-07-22,0,95,,Antiseptic
+Medicine_33,NMB5690,2026-07-13,0,83,,Antibiotic
+Medicine_29,NMB1486,2025-06-21,0,85,,Antiseptic
+Medicine_31,NMB8657,2026-04-28,0,74,,Vitamin
+Medicine_29,NMB2947,2026-05-31,0,99,,Antibiotic
+Medicine_40,NMB3546,2026-05-13,0,17,,Antiseptic
+Medicine_34,NMB4506,2025-06-16,0,92,,Painkiller
+Medicine_40,NMB6295,2025-01-29,0,12,,Antacid
+Medicine_31,NMB5535,2026-10-30,0,18,,Painkiller
+Medicine_24,NMB2560,2026-06-01,0,77,,Antibiotic
+Medicine_35,NMB8344,2025-06-26,0,97,,Antiseptic
+Medicine_24,NMB3484,2026-02-15,0,65,,Vitamin
+Medicine_40,NMB8501,2026-11-02,0,50,,Cough Syrup
+Medicine_28,NMB2970,2025-07-23,0,13,,Antibiotic
