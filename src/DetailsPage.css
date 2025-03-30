@@ -1,0 +1,62 @@
+.details-page {
+    width: 90%;
+    max-width: 1200px;
+    margin: 30px auto; /* Center the page */
+    padding: 20px;
+    text-align: center;
+    position: relative;
+  }
+  
+  /* Close Icon */
+  .close-icon {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+    transition: 0.3s;
+  }
+  
+  .close-icon:hover {
+    color: red;
+    transform: scale(1.2);
+  }
+  
+  /* Common Table Styles */
+  .details-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  /* Mobile View: Headings in First Column */
+  .details-table.mobile td:first-child {
+    font-weight: bold;
+    background-color: #f2f2f2;
+    width: 40%;
+    text-align: left;
+  }
+  
+  /* PC View: Headings in First Row */
+  .details-table.pc thead {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .details-table.pc th {
+    padding: 15px;
+    text-align: center;
+  }
+  
+  .details-table.pc td {
+    padding: 15px;
+    text-align: center;
+  }
+  
+  /* Equal Left & Right Padding */
+  .details-page {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+  

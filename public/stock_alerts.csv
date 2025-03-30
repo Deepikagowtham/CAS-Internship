@@ -1,0 +1,11 @@
+Product Name,Alert Type,Stock Level,Expiry Date,Expiry Alert,Reorder Alert,Non-Movement Alert,Damage Alert
+Paracetamol,Low Stock,15,2025-06-30,False,False,False,False
+Ibuprofen,Expiry Date Tracking,50,2024-04-15,True,False,False,False
+Aspirin,Stock Reordering,5,2025-12-31,False,True,False,False
+Cough Syrup,Non-Movement Stock,100,2026-01-01,False,False,True,False
+Vitamin C,Damage Alert,30,2025-09-20,False,False,False,True
+Antibiotic,Low Stock,12,2025-08-10,False,False,False,False
+Pain Relief Gel,Expiry Date Tracking,60,2024-05-10,True,False,False,False
+Allergy Tablets,Stock Reordering,8,2025-11-15,False,True,False,False
+Cough Drops,Non-Movement Stock,200,2026-03-05,False,False,True,False
+Bandages,Damage Alert,25,2025-07-22,False,False,False,True
