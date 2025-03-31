@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 import { Box, CircularProgress } from "@mui/material";
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Legend } from "recharts";
 
-const SalesStockReport = ({ salesStockData }) => {
+const SalesStockReport = () => {
     const [loading, setLoading] = useState(false);
-    const [data, setData] = useState(salesStockData);
+    const [data, setData] = useState([]);
 
     const baseUrl = "http://127.0.0.1:5000"; 
 
@@ -12,28 +12,33 @@ const SalesStockReport = ({ salesStockData }) => {
         setLoading(true);
         fetch(`${baseUrl}/api/sales-stock-analysis`)
             .then(res => res.json())
-            .then(data => setData(data))
+            .then(fetchedData => {
+                console.log("Fetched Data:", fetchedData); // Debugging
+                setData(fetchedData);
+            })
             .catch(error => console.error("Error fetching sales-stock data:", error))
             .finally(() => setLoading(false));
-    }, [salesStockData]);
+    }, []);
+
+    if (loading) return <CircularProgress sx={{ display: "block", margin: "auto" }} />;
+    if (!data || !Array.isArray(data) || data.length === 0) return <p>No data available</p>;
 
     return (
         <Box>
-            {loading ? (
-                <CircularProgress sx={{ display: "block", margin: "auto" }} />
-            ) : (
-                <ResponsiveContainer width={600} height={400}>
-                    <BarChart data={data} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
-                        <XAxis dataKey="medicineName" />
-                        <YAxis />
-                        <Tooltip />
-                        <Legend />
-                        {/* Two bars: one for quantity and one for sales */}
-                        <Bar dataKey="quantity" fill="#3f51b5" name="Stock Quantity" barSize={50} />
-                        <Bar dataKey="sales" fill="#ff5252" name="Sales" barSize={50} />
-                    </BarChart>
-                </ResponsiveContainer>
-            )}
+            <ResponsiveContainer width={700} height={400}>
+                <BarChart 
+                    data={data} 
+                    layout="vertical" 
+                    margin={{ top: 20, right: 30, left: 50, bottom: 5 }}
+                >
+                    <XAxis type="number" />
+                    <YAxis dataKey="Medicine Name" type="category" width={150} />
+                    <Tooltip />
+                    <Legend />
+                    <Bar dataKey="Stock Remaining" fill="#3f51b5" name="Stock Remaining" barSize={30} />
+                    <Bar dataKey="Sales" fill="#ff5252" name="Sales" barSize={30} />
+                </BarChart>
+            </ResponsiveContainer>
         </Box>
     );
 };

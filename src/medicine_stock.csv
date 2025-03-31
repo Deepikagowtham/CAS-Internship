@@ -1,0 +1,9 @@
+Medicine Name,Batch Number,Manufacture Date,Expiry Date,Purchase Date,Sales,Stock Remaining,Category,Supplier Details,Purchase Cost
+Paracetamol,B12345,2024-01-10,2025-01-10,2024-02-01,500,200,Painkiller,XYZ Pharma,5.0
+Cough Syrup,B67890,2023-12-15,2025-06-15,2024-01-20,100,800,Cold & Flu,ABC Meds,8.5
+Vitamin C,B11223,2024-03-05,2026-03-05,2024-03-10,700,100,Immunity,HealthPlus,4.75
+Insulin,B33445,2023-11-20,2024-11-20,2023-12-01,50,450,Diabetes,MedCare,15.0
+Pain Relief Gel,B55678,2024-02-28,2025-06-30,2024-03-05,900,50,Pain Relief,Wellness Inc.,6.0
+Antibiotic A,B78901,2024-01-15,2025-04-10,2024-02-10,30,470,Antibiotic,Medix Pharma,12.0
+Antibiotic B,B89012,2023-10-10,2024-12-01,2023-11-15,20,480,Antibiotic,BioHealth,14.5
+Cold Tablet,B90123,2023-09-20,2024-11-10,2023-10-25,10,490,Cold & Flu,CureWell,7.25

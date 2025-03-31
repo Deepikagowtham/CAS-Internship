@@ -10,6 +10,8 @@ import ExpiryDataReport from "./ExpiryDataReport"; // Import the new component
 import StockDataReport from "./StockDataReport";
 import SupplierPerformanceReport from "./SupplierPerformanceReport";
 import SalesStockReport from "./SalesStockReport"; // New Sales vs Stock component
+import StockMovement from "./StockMovement";
+
 
 const InventoryReport = () => {
     const [selectedCategory, setSelectedCategory] = useState("Stock Data");
@@ -58,8 +60,10 @@ const InventoryReport = () => {
         "Expiry Data",
         "Supplier Performance",
         "Sales vs Stock Analysis",
-        "Return & Damage Data"
+        "Return & Damage Data",
+        "Stock Movement"  
     ];
+    
 
     return (
         
@@ -133,6 +137,12 @@ const InventoryReport = () => {
                                         </BarChart>
                                     </ResponsiveContainer>
                                 )}
+
+                                 {/* Stock Movement Report */}
+                        {selectedCategory === "Stock Movement" && (
+                            <StockMovement />
+                        )}
+
                             </Box>
                         </Fade>
                     )}

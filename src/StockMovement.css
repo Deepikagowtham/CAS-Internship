@@ -1,0 +1,83 @@
+/* Adjust main content to avoid overlap */
+.stock-movement-container {
+    text-align: center;
+    padding: 20px;
+    font-family: "Poppins", sans-serif;
+    margin-left: 200px;  /* ✅ Adjust this based on your sidebar width */
+    transition: margin-left 0.3s ease-in-out;
+}
+
+/* ✅ Ensure charts do not overflow */
+.chart-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: nowrap;
+    width: 100%;
+    overflow-x: auto;
+    gap: 30px;
+    padding: 20px 0;
+}
+
+/* Responsive Fix */
+@media (max-width: 1024px) {
+    .stock-movement-container {
+        margin-left: 200px; /* Adjust for smaller screens */
+    }
+
+    .chart-container {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 768px) {
+    .stock-movement-container {
+        margin-left: 0;  /* On smaller screens, allow full width */
+    }
+
+    .chart-box {
+        width: 100%;
+    }
+}
+
+/* ✅ Each Chart Box */
+.chart-box {
+    width: 30%;  /* Adjust width to fit */
+    min-width: 300px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* ✅ Hover effect */
+.chart-box:hover {
+    transform: scale(1.05);
+}
+
+/* Chart Title */
+.chart-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #34495e;
+    margin-bottom: 15px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .chart-container {
+        flex-wrap: wrap;
+    }
+
+    .chart-box {
+        width: 45%;
+    }
+}
+
+@media (max-width: 768px) {
+    .chart-box {
+        width: 100%;
+    }
+}
