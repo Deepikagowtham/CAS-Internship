@@ -6,21 +6,31 @@ import os
 app = Flask(__name__)
 CORS(app)  # Allow React frontend requests
 
-# ✅ Load stock and deleted stock datasets with error handling
+# ✅ Load datasets with error handling
 try:
+    # Stock Data
     if os.path.exists("stock_data.csv"):
         stock_df = pd.read_csv("stock_data.csv")
     else:
-        stock_df = pd.DataFrame(columns=["medicineName", "quantity", "expiryDate", "supplierDetails", "purchaseCost"])
+        stock_df = pd.DataFrame(columns=["medicineName", "batchNumber", "expiryDate", "quantity", "category", "supplierDetails", "purchaseCost"])
     
+    # Deleted Stock Data
     if os.path.exists("deleted_stock_data.csv"):
         deleted_df = pd.read_csv("deleted_stock_data.csv")
     else:
         deleted_df = pd.DataFrame(columns=["medicineName", "reason"])
+
+    # Medicine Stock Data (NEW CSV FILE)
+    if os.path.exists("medicine_stock.csv"):
+        medicine_stock_df = pd.read_csv("medicine_stock.csv")
+    else:
+        medicine_stock_df = pd.DataFrame(columns=["Medicine Name", "Batch Number", "Manufacture Date", "Expiry Date", "Purchase Date", "Sales", "Stock Remaining", "Category", "Supplier Details", "Purchase Cost"])
+
 except Exception as e:
     print("Error loading CSV files:", e)
-    stock_df = pd.DataFrame(columns=["medicineName", "quantity", "expiryDate", "supplierDetails", "purchaseCost"])
+    stock_df = pd.DataFrame(columns=["medicineName", "batchNumber", "expiryDate", "quantity", "category", "supplierDetails", "purchaseCost"])
     deleted_df = pd.DataFrame(columns=["medicineName", "reason"])
+    medicine_stock_df = pd.DataFrame(columns=["Medicine Name", "Batch Number", "Manufacture Date", "Expiry Date", "Purchase Date", "Sales", "Stock Remaining", "Category", "Supplier Details", "Purchase Cost"])
 
 
 # ✅ Stock Levels Report (Filtered by Medicine Name)
@@ -90,14 +100,13 @@ def supplier_performance():
 @app.route("/api/sales-stock-analysis", methods=["GET"])
 def sales_vs_stock():
     try:
-        if stock_df.empty:
-            return jsonify({"error": "Stock data not available"}), 500
+        if medicine_stock_df.empty:
+            return jsonify({"error": "Medicine stock data not available"}), 500
 
-        sales_data = {"Paracetamol": 500, "Cough Syrup": 200}  # Dummy Sales Data
-        stock_df["sales"] = stock_df["medicineName"].map(sales_data).fillna(0)
-        stock_df["remaining_stock"] = stock_df["quantity"] - stock_df["sales"]
+        medicine_stock_df["Sales"] = pd.to_numeric(medicine_stock_df["Sales"], errors="coerce").fillna(0)
+        medicine_stock_df["Stock Remaining"] = pd.to_numeric(medicine_stock_df["Stock Remaining"], errors="coerce").fillna(0)
 
-        report = stock_df[["medicineName", "quantity", "sales", "remaining_stock"]]
+        report = medicine_stock_df[["Medicine Name", "Sales", "Stock Remaining"]]
 
         return jsonify(report.to_dict(orient="records"))
 
@@ -119,6 +128,30 @@ def return_damage():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
+
+# ✅ Stock Movement Report (Using New `medicine_stock.csv`)
+@app.route("/api/stock-movement", methods=["GET"])
+def stock_movement_report():
+    try:
+        if medicine_stock_df.empty:
+            return jsonify({"error": "Stock movement data not available"}), 500
+
+        # Convert Expiry Date and Purchase Date columns to datetime
+        medicine_stock_df["Expiry Date"] = pd.to_datetime(medicine_stock_df["Expiry Date"], errors='coerce')
+        medicine_stock_df["Purchase Date"] = pd.to_datetime(medicine_stock_df["Purchase Date"], errors='coerce')
+
+        # Define fast-moving and non-moving criteria
+        fast_moving = medicine_stock_df[medicine_stock_df["Sales"] > 50]  # Example: Sales > 50
+        non_moving = medicine_stock_df[medicine_stock_df["Sales"] == 0]  # Example: No Sales
+
+        return jsonify({
+            "fastMovingStock": fast_moving.to_dict(orient="records"),
+            "nonMovingStock": non_moving.to_dict(orient="records")
+        })
+
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+ 
 
 if __name__ == "__main__":
     app.run(debug=True)
