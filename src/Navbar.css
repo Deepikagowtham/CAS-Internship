@@ -1,78 +1,53 @@
-/* Ensure navbar is always visible */
-nav {
-    background-color: #1e3d58;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 16px;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 50;
-  }
-  
-  /* Container */
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  /* Brand Logo */
-  h1 {
-    color: white;
-    font-size: 1.5rem;
-    font-weight: bold;
-  }
-  
-  /* Hamburger Menu */
-  button {
-    background: none;
-    border: none;
-    cursor: pointer;
-  }
-  
-  /* Navigation List */
-  ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  /* Nav Items */
-  ul li {
-    text-align: center;
-    padding: 10px 0;
-  }
-  
-  ul li a {
-    color: white;
-    font-size: 1.2rem;
-    text-decoration: none;
-    transition: color 0.3s ease-in-out;
-  }
-  
-  /* Active and Hover Effects */
-  ul li a:hover,
-  ul li a.active {
-    color: #43b0f1;
-    font-weight: bold;
-  }
-  
-  /* Mobile Menu */
-  @media (max-width: 768px) {
-    ul {
-      position: absolute;
-      top: 60px;
-      left: 0;
-      width: 100%;
-      background-color: #1e3d58;
-      flex-direction: column;
-      display: none;
-    }
-  
-    ul.open {
-      display: flex;
-    }
-  }
-  
+/* Navbar Styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw; /* Full screen width */
+  height: 60px; /* Keeping the height same */
+  background: white;
+  padding: 0 30px; /* Added padding for better spacing */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: -250px; /* Positioned at the top */
+  left: 0;
+  z-index: 1000;
+}
+
+/* Left - Logo */
+.navbar-left {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 150px; /* Adjusted for consistency */
+  height: auto;
+  margin-left: 10px; /* Ensures alignment */
+}
+
+/* Right - Links */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 30px; /* Space between links */
+  margin-right: 20px; /* Ensures alignment */
+}
+
+.nav-link, .icon-link {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 16px;
+  transition: color 0.3s ease-in-out;
+}
+
+.nav-link:hover, .icon-link:hover {
+  color: #0056b3;
+}
+
+/* Icons */
+.icon-link {
+  display: flex;
+  align-items: center;
+}
