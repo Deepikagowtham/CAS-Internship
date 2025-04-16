@@ -1,0 +1,184 @@
+/* Reset default margin/padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Remove center alignment */
+  #root {
+    max-width: 100%;
+    padding: 0;
+    text-align: left;
+  }
+  
+  /* Navbar Styling (Fixed at the Top) */
+  .cnavbar {
+    background-color: #125399 !important; /* Bootstrap primary blue */
+    padding: 1rem;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Ensures it's always above content */
+  }
+  .cnavbar .cnavbar-brand {
+    color: white !important;
+    font-weight: bold;
+  }
+  .cnavbar .cform-input {
+    width: 200px;
+  }
+  .cnavbar .cbutton {
+    border-color: white;
+    color: white;
+  }
+  .cnavbar .cbutton:hover {
+    background-color: white;
+    color: #3c8840;
+  }
+  
+  /* Adjust Content to Start Below Navbar */
+  .main-container {
+    margin-top: 130px; /* Adjust based on navbar height */
+    padding: 20px;
+  }
+  
+  /* Layout: Carousel 3/4 & Buttons 1/4 */
+  .row {
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Left Side - Carousel */
+  .carousel-container {
+    width: 100%;
+    max-height: 500px; /* Set fixed height */
+    overflow: hidden;
+    border-radius: 10px;
+    will-change: transform;
+  }
+  
+  /* Carousel Slide */
+  .carousel-item {
+    height: 400px; /* Match container height */
+    display: flex;
+    width: 800px;
+    align-items: center;
+    border-radius: 20px;
+    justify-content: center;
+    background-color: #000; /* Optional fallback background */
+  }
+  
+  /* Carousel Images */
+  .carousel-container img,
+  .carousel-item img {
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  
+  /* Right Side - Buttons */
+  .button-container {
+    position: absolute;
+    top: 50%;
+    right: 180px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    z-index: 10;
+  
+  }
+  
+  .button-container .modern-btn {
+    width: 200px;
+    font-size: 29px;
+    font-weight: bold;
+    
+  }
+  
+  .logo-img {
+    margin-top: -20px;
+    width: 150px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  /* Modern Button Style */
+  .modern-btn {
+    background: linear-gradient(135deg, #3f51b5, #2196f3);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease;
+  }
+  
+  .modern-btn:hover {
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(135deg, #3f51b5, #2196f3);
+    color: white;
+  }
+  
+  .modern-btn:active {
+    transform: translateY(0px) scale(0.98);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(135deg, #3f51b5, #2196f3) !important;
+    color: white !important;
+  }
+  
+  .modern-btn:focus {
+    outline: none;
+    color: white !important;
+    background: linear-gradient(135deg, #3f51b5, #2196f3) !important;
+  }
+  
+  /* Flash News Banner */
+  .flash-news {
+    color: black;
+    overflow: hidden;
+    font-weight: bold;
+    position: fixed;
+    top:16%;
+    z-index: 1000;
+    height: 40px;
+    width: 100%;
+  }
+  
+  /* Scrolling Text inside it */
+  .scrolling-text {
+    position: absolute;
+    white-space: nowrap;
+    animation: scroll-left 10s linear infinite;
+    font-size: 35px;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 100%; /* Start completely off screen */
+  }
+  
+  @keyframes scroll-left {
+    0% {
+      left: 100%;
+    }
+    100% {
+      left: -100%;
+    }
+  }
+  
+  .blinking-text {
+    color: rgb(150, 1, 13);
+    font-weight: bold;
+    animation: blink 1s infinite;
+  }
+  
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+  
+  .h1{
+    font-family: 'Courier New', Courier, monospace;
+  }
+  

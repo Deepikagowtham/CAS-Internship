@@ -15,7 +15,7 @@ const getIcon = (type) => {
   }
 };
 
-const Navbar = () => {
+const NotificationPanel = () => {
   const [notifications, setNotifications] = useState([]);
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
@@ -60,7 +60,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="navbar">
+    <div className="notification-panel">
       <h2>Stock Alerts</h2>
       <div className="notification-bell" onClick={() => setIsOpen(!isOpen)}>
         <Bell size={24} />
@@ -90,8 +90,8 @@ const Navbar = () => {
           )}
         </div>
       )}
-    </nav>
+    </div>
   );
 };
 
-export default Navbar;
+export default NotificationPanel;

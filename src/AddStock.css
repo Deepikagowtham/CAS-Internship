@@ -72,15 +72,18 @@ button {
   color: white;
   border: none;
   padding: 12px;
-  border-radius: 6px;
+  border-radius: 10px;
   cursor: pointer;
   font-size: 16px;
+  padding-left: 15px;
   font-weight: bold;
   margin-right: 30px;
   text-transform: uppercase;
   transition: 0.3s ease-in-out;
 }
-
+.view-btn button{
+  padding-left: 25px;
+}
 /* Button Hover Effect */
 button:hover {
   background-color: #057dcd;

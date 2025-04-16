@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+
+/* Full A4 Canvas */
+.bill-container {
+  width: 210mm;
+  min-height: 297mm;
+  margin: 0 auto;
+  background: #fff;
+  padding: 20mm;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  box-sizing: border-box;
+  position: relative;
+}
+
+/* Centered Header */
+.bill-header-centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bill-logo-centered {
+  height: 130px;
+  width: auto;
+  margin-bottom: 0;
+}
+
+/* Title and Barcode */
+.bill-title-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  padding: 0 5px;
+}
+
+.cash-bill-label {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+  margin: 0;
+}
+
+.barcode-placeholder {
+  font-family: monospace;
+  font-size: 20px;
+  background: #eee;
+  padding: 5px 10px;
+  border-radius: 4px;
+}
+
+/* Patient Info Section */
+.info-box {
+  border: 1px solid #ccc;
+  padding: 16px;
+  margin-top: 16px;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+.info-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.info-table td {
+  padding: 6px 10px;
+  vertical-align: top;
+}
+
+.info-table td:first-child,
+.info-table td:nth-child(3) {
+  font-weight: bold;
+  white-space: nowrap;
+  width: 100px;
+}
+
+.info-table td:nth-child(2) {
+  padding-right: 60px;
+}
+
+/* Main Table */
+.bill-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-size: 13px;
+  border: 1px solid #000;
+}
+
+.bill-table th,
+.bill-table td {
+  border: 1px solid #000;
+  padding: 8px;
+  text-align: center;
+  word-wrap: break-word;
+}
+
+.bill-table th {
+  background-color: #057dcd;
+  font-weight: bold;
+}
+
+/* GST & Totals */
+.gst-summary-section {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 24px;
+}
+
+.gst-summary-table {
+  width: 60%;
+  border: 1px solid #000;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.gst-summary-table th,
+.gst-summary-table td {
+  border: 1px solid #000;
+  padding: 8px 12px;
+  text-align: center;
+}
+
+.totals-box {
+  width: 35%;
+  font-size: 14px;
+}
+
+.totals-box p {
+  margin: 4px 0;
+  text-align: right;
+}
+
+.grand-total {
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* Words Below */
+.amount-in-words {
+  margin-top: 12px;
+  font-weight: 500;
+  font-size: 14px;
+  text-align: left;
+}
+
+/* Signature Section */
+.signature-section {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  font-size: 13px;
+}
+
+.signature-section div {
+  text-align: center;
+  flex: 1;
+}
+
+/* Footer */
+.gstin {
+  margin-top: 16px;
+  font-size: 12px;
+  text-align: left;
+}
+
+.page-number {
+  font-size: 12px;
+  text-align: right;
+  color: #007bff;
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+/* Print Optimizations */
+@media print {
+  body {
+    background: #fff;
+  }
+
+  .bill-container {
+    box-shadow: none;
+    margin: 0;
+    width: 210mm;
+    min-height: 297mm;
+    padding: 15mm;
+    page-break-after: always;
+  }
+
+  .barcode-placeholder {
+    background: none;
+  }
+
+  .page-number {
+    position: absolute;
+    bottom: 15mm;
+    right: 20mm;
+  }
+}

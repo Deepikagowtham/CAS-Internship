@@ -1,0 +1,80 @@
+export const billData = {
+  billNo: "57396",
+  date: "02-02-24/10:43 AM",
+  patient: {
+    name: "Mr THANGAVEL K.",
+    regNo: "294296",
+    address: "VALAIKUTTAI,VAIKUNTHAM POST SANGAGIRI TK, SALEM",
+    phone: "9994754282",
+    altPhone: "9750001524",
+  },
+  doctor: "Dr. SHYAM SUNDAR V (ORTHOPAEDICS)",
+  items: [
+    {
+      description: "TABLET.ULTRAM",
+      hsn: "30049099",
+      batch: "UAM5305",
+      exp: "06-25",
+      qty: 2,
+      price: 23.9,
+      total: 56.80,
+      cgst: 1.42,
+      sgst: 1.42
+    },
+    {
+      description: "TABLET.ULTRAM",
+      hsn: "30049099",
+      batch: "UAM5305",
+      exp: "06-25",
+      qty: 14,
+      price: 11.45,
+      total: 160.80,
+      cgst: 4.02,
+      sgst: 4.02
+    },
+    {
+      description: "PATCH.BUPIREGIC 5 MCG",
+      hsn: "30042043",
+      batch: "27O0342",
+      exp: "12-24",
+      qty: 5,
+      price: 178.3,
+      total: 891.50,
+      cgst: 22.29,
+      sgst: 22.29
+    },
+    {
+      description: "AMPOULES.EDGODOL 1 ML",
+      hsn: "30042012",
+      batch: "2208042",
+      exp: "07-25",
+      qty: 2,
+      price: 10.27,
+      total: 11.50,
+      cgst: 0.29,
+      sgst: 0.29
+    },
+    {
+      description: "SYRINGE.7ML DISPOVAN",
+      hsn: "392329",
+      batch: "E23024",
+      exp: "11-28",
+      qty: 2,
+      price: 6.88,
+      total: 13.60,
+      cgst: 0.34,
+      sgst: 0.34
+    },
+  ],
+  gst: {
+    cgst: 48.02,
+    sgst: 48.02,
+    totalGst: 96.04,
+  },
+  total: 800.26,
+  roundedOff: -0.32,
+  grandTotal: 896,
+  preparedBy: "RATHIKA",
+  packedBy: "RATHIKA25",
+  pharmacist: "SATHISH",
+};

@@ -167,7 +167,7 @@ const AddStock = () => {
         value={newMedicine.storageConditions}
         onChange={handleChange}
       /> <br/><br/>
-      <button onClick={addStock}>Add Stock</button>
+      <button className="view-btn" onClick={addStock}>Add Stock</button> <br/><br/>
       <button className="view-btn" onClick={() => navigate("/view-stock")}>
         View Products
       </button> 

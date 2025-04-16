@@ -1,0 +1,92 @@
+/* Page Layout */
+.login-page {
+    background: linear-gradient(to right, #e3f2fd, #ffffff);
+    min-height: 100vh;
+    font-family: 'Roboto', sans-serif;
+    padding: 0;
+    margin: 0;
+  }
+  
+  /* Navbar */
+  .custom-navbar {
+    background-color: #064789;
+    padding: 10px 30px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  .navbar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  /* Left Side (Logo & Name) */
+  .navbar-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .logo-img {
+    height: 60px;
+    width: 150px;
+    margin-left: -50px;
+
+  }
+  
+  .bill-button {
+    background-color: #4bafed; /* Green */
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  .bill-button:hover {
+    background-color: #186ea4;
+  }
+  
+  .hospital-name {
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  /* Right Side (NotificationPanel) */
+  .navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  /* Content below navbar */
+  .login-content {
+    text-align: center;
+    margin-top: 100px;
+    padding: 20px;
+  }
+  
+  .login-content h2 {
+    color: #186ea4;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .login-content p {
+    color: #444;
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto 30px;
+  }
+  
+  .pharmacist-img {
+    width: 220px;
+    margin-top: 10px;
+  }
+  

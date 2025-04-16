@@ -1,24 +1,72 @@
-/* Navbar */
+/* Import Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
 
-* {
-  font-family: 'Roboto', sans-serif;
-}
-
-.navbar {
+/* Notification Panel */
+.notification-panel {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 12px 20px;
-  background: #333;
+  padding: 24px 24px; /* Increased height */
+  background: #064789; /* Blue-Green Gradient */
   color: white;
   position: relative;
+  height: 45px;
+  margin-right: -80px;
 }
 
+/* Left Section (Logo) */
+.notification-panel-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo {
+  width: 250px;
+  height: 50px;
+}
+
+/* Navigation Links */
+.notification-panel-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 19px;
+  transition: color 0.3s ease-in-out;
+}
+
+.nav-link:hover {
+  color: #e3e3e3;
+}
+
+/* Register Button (Moved to Right) */
+.register-btn {
+  background-color: #ff9800; /* Orange */
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.3s;
+  position: absolute;
+  right: 70px;
+}
+
+.register-btn:hover {
+  background-color: #e68900;
+}
+
+/* Notification Bell */
 .notification-bell {
   position: relative;
   cursor: pointer;
-  
 }
 
 .notification-count {
@@ -41,7 +89,7 @@
   position: absolute;
   top: 50px;
   right: 10px;
-  width: 360px; /* Slightly increased width */
+  width: 360px;
   background: white;
   color: black;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -61,7 +109,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 16px; /* Increased height */
+  padding: 16px;
   margin-bottom: 8px;
   border-radius: 8px;
   border: 1px solid #ddd;
@@ -69,20 +117,20 @@
   font-weight: bold;
   transition: background 0.3s ease-in-out;
   gap: 12px;
-  min-height: 60px; /* Slightly increased height */
+  min-height: 60px;
 }
 
 /* Alert Types */
-.low-stock { background-color: #ffcdee !important; } /* Light Pink */
-.expiry { background-color: #ffffcc !important; } /* Light Yellow */
-.reorder { background-color: #dda0dd !important; } /* Light Purple */
-.non-movement { background-color: #add8e6 !important; } /* Light Blue */
-.damage { background-color: #d1a2a2 !important; } /* Light Red */
+.low-stock { background-color: #ffcdee !important; }
+.expiry { background-color: #ffffcc !important; }
+.reorder { background-color: #dda0dd !important; }
+.non-movement { background-color: #add8e6 !important; }
+.damage { background-color: #d1a2a2 !important; }
 
 /* Read Notification Styling */
 .notification-item.read {
   opacity: 0.6;
-  display: none; /* Hides notification when marked as read */
+  display: none;
 }
 
 /* Notification Content */
@@ -102,7 +150,7 @@
 
 /* View Button */
 .view-btn {
-  background-color: #007bff;
+  background-color: #0056b3;
   color: white;
   border: none;
   padding: 6px 12px;
@@ -110,14 +158,11 @@
   font-size: 14px;
   cursor: pointer;
   transition: background 0.3s ease-in-out;
-  display: inline-block;
-  text-align: center;
   text-decoration: none;
-  margin-left: 10px; /* Added gap between alert text and button */
 }
 
 .view-btn:hover {
-  background-color: #0056b3;
+  background-color: #004099;
 }
 
 /* Checkmark Icon (Mark as Read) */
@@ -132,6 +177,8 @@
   color: darkgreen;
   transform: scale(1.2);
 }
+
+/* Details Modal */
 .details-modal {
   position: fixed;
   top: 50%;
